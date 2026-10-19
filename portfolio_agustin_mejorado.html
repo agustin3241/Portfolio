@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agustín Nahuel Rodríguez | Marketing Digital · E-commerce · Contenido</title>
+    <meta name="description" content="Portfolio profesional de Agustín Nahuel Rodríguez: experiencia práctica en e-commerce, marketing digital, creación de contenido y gestión de Cromito.">
+    <meta name="theme-color" content="#0f172a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Agustín Nahuel Rodríguez | Marketing Digital y E-commerce">
+    <meta property="og:description" content="Experiencia práctica en e-commerce, contenido para redes sociales y gestión de Cromito.">
+    <meta property="og:locale" content="es_AR">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#0f172a',
+                        ink2: '#1e293b',
+                        electric: '#2563eb',
+                        ice: '#93c5fd',
+                    },
+                    fontFamily: {
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass-bg: rgba(148, 197, 253, 0.04);
+            --glass-border: rgba(147, 197, 253, 0.12);
+            --glass-inner: inset 0 1px 1px rgba(216, 236, 248, 0.08), inset 0 24px 48px rgba(168, 216, 245, 0.04);
+        }
+        html { scroll-behavior: smooth; }
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid #93c5fd;
+            outline-offset: 4px;
+            border-radius: 8px;
+        }
+        body {
+            background-color: #0f172a;
+            background-image:
+                radial-gradient(ellipse 80% 50% at 50% -10%, rgba(37, 99, 235, 0.18), transparent),
+                radial-gradient(ellipse 40% 35% at 85% 30%, rgba(59, 130, 246, 0.08), transparent),
+                radial-gradient(ellipse 45% 40% at 8% 65%, rgba(37, 99, 235, 0.06), transparent);
+            background-attachment: fixed;
+        }
+        ::selection { background: rgba(37, 99, 235, 0.45); color: #fff; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 8px; border: 2px solid #0f172a; }
+        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+
+        .glass {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-inner);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .glass-strong {
+            background: rgba(30, 41, 59, 0.55);
+            border: 1px solid rgba(147, 197, 253, 0.14);
+            box-shadow: var(--glass-inner), 0 20px 50px rgba(2, 6, 23, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .gradient-text {
+            background: linear-gradient(120deg, #dbeafe 0%, #93c5fd 45%, #2563eb 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(147, 197, 253, 0.25) 25%, rgba(147, 197, 253, 0.25) 75%, transparent 100%);
+        }
+        .corner-dots { position: relative; }
+        .corner-dots::before, .corner-dots::after {
+            content: '';
+            position: absolute;
+            width: 5px; height: 5px;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(147, 197, 253, 0.9) 0%, rgba(147, 197, 253, 0) 75%);
+            filter: drop-shadow(0 0 4px rgba(147, 197, 253, 0.6));
+        }
+        .corner-dots::before { top: 10px; left: 10px; }
+        .corner-dots::after { bottom: 10px; right: 10px; }
+
+        /* Animated conic border on hover */
+        @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+        .glow-border {
+            position: relative;
+            transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s cubic-bezier(.22,1,.36,1);
+        }
+        .glow-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            padding: 1px;
+            background: conic-gradient(from var(--angle), transparent 0%, rgba(37, 99, 235, 0) 20%, rgba(96, 165, 250, 0.9) 50%, rgba(37, 99, 235, 0) 80%, transparent 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity .45s ease;
+            animation: spin-angle 6s linear infinite;
+            pointer-events: none;
+        }
+        .glow-border:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(37, 99, 235, 0.18), var(--glass-inner); }
+        .glow-border:hover::before { opacity: 1; }
+        @keyframes spin-angle { to { --angle: 360deg; } }
+
+        /* Hero spotlight */
+        .spotlight {
+            position: absolute;
+            width: 60vmax; height: 60vmax;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent 0deg, rgba(37, 99, 235, 0.12) 40deg, rgba(96, 165, 250, 0.2) 60deg, rgba(37, 99, 235, 0.12) 80deg, transparent 120deg);
+            filter: blur(60px);
+            animation: spotlight-rotate 24s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes spotlight-rotate {
+            0% { transform: rotate(0deg) scale(1); opacity: .7; }
+            50% { transform: rotate(180deg) scale(1.12); opacity: 1; }
+            100% { transform: rotate(360deg) scale(1); opacity: .7; }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(70px);
+            opacity: .5;
+            pointer-events: none;
+        }
+        @keyframes float-slow { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-24px) } }
+        .animate-float { animation: float-slow 9s ease-in-out infinite; }
+        .animate-float-delay { animation: float-slow 11s ease-in-out 2s infinite; }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Marquee */
+        @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+        .marquee-track { animation: marquee 28s linear infinite; }
+
+        /* Gradient CTA */
+        .cta-primary {
+            background: linear-gradient(120deg, #2563eb, #3b82f6 50%, #2563eb);
+            background-size: 200% 100%;
+            transition: background-position .6s ease, transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease;
+        }
+        .cta-primary:hover {
+            background-position: 100% 0;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(37, 99, 235, 0.45);
+        }
+
+        /* Reel mockup */
+        .reel-card { transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s cubic-bezier(.22,1,.36,1); }
+        .reel-card:hover { transform: translateY(-6px) scale(1.015); }
+        .reel-card:hover .reel-visual { box-shadow: 0 30px 80px rgba(37, 99, 235, 0.35); }
+        .reel-card:hover .play-btn { transform: scale(1.12); background: rgba(37, 99, 235, 0.95); }
+        @keyframes scanline { 0% { top: -10% } 100% { top: 110% } }
+        .scanline {
+            position: absolute;
+            left: 0; right: 0; height: 28%;
+            background: linear-gradient(180deg, transparent, rgba(147, 197, 253, 0.09), transparent);
+            animation: scanline 3.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        /* Nav link underline */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: -4px;
+            width: 100%; height: 1px;
+            background: linear-gradient(90deg, #60a5fa, transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .35s cubic-bezier(.22,1,.36,1);
+        }
+        .nav-link:hover::after { transform: scaleX(1); }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+            .reveal { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body class="font-body text-slate-300 antialiased overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+            <div class="mt-4 flex items-center justify-between rounded-2xl glass-strong px-5 py-3">
+                <a href="#inicio" class="font-display font-700 text-white text-lg tracking-tight flex items-center gap-2.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-electric shadow-[0_0_12px_rgba(37,99,235,0.9)]"></span>
+                    <span>agustin<span class="text-ice">.dev</span></span>
+                </a>
+                <div class="hidden md:flex items-center gap-8 font-mono text-[13px] tracking-wide">
+                    <a href="#sobre-mi" class="nav-link text-slate-300 hover:text-white transition-colors">SOBRE MÍ</a>
+                    <a href="#cromito" class="nav-link text-slate-300 hover:text-white transition-colors">PROYECTO</a>
+                    <a href="#reels" class="nav-link text-slate-300 hover:text-white transition-colors">REELS</a>
+                    <a href="#competencias" class="nav-link text-slate-300 hover:text-white transition-colors">SKILLS</a>
+                    <a href="#certificaciones" class="nav-link text-slate-300 hover:text-white transition-colors">CERTIFICACIONES</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="mailto:rodriguezagustin3241@gmail.com" class="hidden sm:inline-flex cta-primary text-white text-sm font-semibold px-5 py-2.5 rounded-xl">
+                        Contactar
+                    </a>
+                    <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white p-2" aria-label="Abrir menú">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <path id="menu-icon" d="M4 7h16M4 12h16M4 17h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden mt-2 rounded-2xl glass-strong p-5 space-y-4 font-mono text-sm">
+                <a href="#sobre-mi" class="block text-slate-300 hover:text-white">SOBRE MÍ</a>
+                <a href="#cromito" class="block text-slate-300 hover:text-white">PROYECTO</a>
+                <a href="#reels" class="block text-slate-300 hover:text-white">REELS</a>
+                <a href="#competencias" class="block text-slate-300 hover:text-white">SKILLS</a>
+                <a href="#certificaciones" class="block text-slate-300 hover:text-white">CERTIFICACIONES</a>
+                <a href="mailto:rodriguezagustin3241@gmail.com" class="block text-ice font-semibold">Contactar →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden px-5 sm:px-8 pt-32 pb-20">
+        <div class="spotlight top-[-20%] left-1/2 -translate-x-1/2"></div>
+        <div class="orb w-72 h-72 bg-blue-600/30 top-24 -left-16 animate-float"></div>
+        <div class="orb w-96 h-96 bg-blue-500/20 bottom-10 -right-24 animate-float-delay"></div>
+
+        <div class="relative max-w-4xl mx-auto text-center">
+            <div class="reveal inline-flex items-center gap-2 glass rounded-full px-4 py-2 font-mono text-[11px] sm:text-xs tracking-[0.2em] text-ice uppercase mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)] animate-pulse"></span>
+                Disponible para oportunidades junior
+            </div>
+
+            <h1 class="reveal font-display font-bold text-white leading-[1.05] tracking-tight text-4xl sm:text-6xl lg:text-7xl" style="transition-delay:.1s">
+                Agustín Nahuel<br>
+                <span class="gradient-text drop-shadow-[0_2px_24px_rgba(96,165,250,0.35)]">Rodríguez</span>
+            </h1>
+
+            <p class="reveal mt-6 text-lg sm:text-xl text-slate-300 font-medium" style="transition-delay:.2s">
+                Marketing Digital <span class="text-electric">·</span> E-commerce <span class="text-electric">·</span> Contenido para Redes Sociales
+            </p>
+
+            <p class="reveal mt-5 max-w-2xl mx-auto text-slate-400 text-sm sm:text-base leading-relaxed" style="transition-delay:.3s">
+                Estudiante de 7.º año de escuela técnica con orientación en informática. Fundador de
+                <strong class="text-white font-semibold">Cromito</strong>, tienda de e-commerce con más de
+                <strong class="text-ice font-semibold">78 ventas concretadas</strong>. Apasionado por las tiendas online, el marketing digital y la producción audiovisual.
+            </p>
+
+            <div class="reveal mt-10 flex flex-wrap justify-center gap-4" style="transition-delay:.4s">
+                <a href="mailto:rodriguezagustin3241@gmail.com" class="cta-primary text-white font-semibold px-8 py-4 rounded-2xl inline-flex items-center gap-2.5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                    Contactar por Email
+                </a>
+                <a href="https://cromito.mitiendanube.com" target="_blank" rel="noopener noreferrer" class="glass text-white font-semibold px-8 py-4 rounded-2xl inline-flex items-center gap-2.5 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    Ver Tienda Online
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="reveal mt-16 grid grid-cols-3 gap-3 sm:gap-5 max-w-2xl mx-auto" style="transition-delay:.5s">
+                <div class="glass corner-dots rounded-2xl py-5 px-2 sm:px-5">
+                    <div class="font-display font-bold text-2xl sm:text-4xl text-white">78<span class="text-electric">+</span></div>
+                    <div class="font-mono text-[10px] sm:text-xs text-slate-400 tracking-wider mt-1 uppercase">Ventas concretadas</div>
+                </div>
+                <div class="glass corner-dots rounded-2xl py-5 px-2 sm:px-5">
+                    <div class="font-display font-bold text-2xl sm:text-4xl text-white">6</div>
+                    <div class="font-mono text-[10px] sm:text-xs text-slate-400 tracking-wider mt-1 uppercase">Cursos y credenciales</div>
+                </div>
+                <div class="glass corner-dots rounded-2xl py-5 px-2 sm:px-5">
+                    <div class="font-display font-bold text-2xl sm:text-4xl text-white">2026</div>
+                    <div class="font-mono text-[10px] sm:text-xs text-slate-400 tracking-wider mt-1 uppercase">Egreso técnico</div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#sobre-mi" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500 hover:text-ice transition-colors animate-bounce" aria-label="Bajar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m-7-7 7 7 7-7"/></svg>
+        </a>
+    </header>
+
+    <!-- MARQUEE -->
+    <div class="relative py-6 border-y border-white/5 overflow-hidden">
+        <div class="marquee-track flex whitespace-nowrap gap-12 font-mono text-sm text-slate-500 tracking-[0.25em] uppercase w-max">
+            <span class="flex gap-12 shrink-0">
+                <span>Marketing Digital</span><span class="text-electric">✦</span><span>E-commerce</span><span class="text-electric">✦</span><span>Contenido Audiovisual</span><span class="text-electric">✦</span><span>Tiendanube</span><span class="text-electric">✦</span><span>Instagram</span><span class="text-electric">✦</span><span>Edición de Video</span><span class="text-electric">✦</span><span>Storytelling</span><span class="text-electric">✦</span>
+            </span>
+            <span class="flex gap-12 shrink-0" aria-hidden="true">
+                <span>Marketing Digital</span><span class="text-electric">✦</span><span>E-commerce</span><span class="text-electric">✦</span><span>Contenido Audiovisual</span><span class="text-electric">✦</span><span>Tiendanube</span><span class="text-electric">✦</span><span>Instagram</span><span class="text-electric">✦</span><span>Edición de Video</span><span class="text-electric">✦</span><span>Storytelling</span><span class="text-electric">✦</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="relative max-w-6xl mx-auto px-5 sm:px-8 py-24">
+        <div class="reveal">
+            <span class="font-mono text-xs text-electric tracking-[0.25em] uppercase">01 / Perfil</span>
+            <h2 class="font-display font-bold text-white text-3xl sm:text-5xl mt-3 tracking-tight">Sobre <span class="gradient-text">mí</span></h2>
+        </div>
+        <div class="mt-10 grid md:grid-cols-5 gap-6">
+            <div class="reveal glass corner-dots rounded-3xl p-8 md:col-span-3 glow-border">
+                <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
+                    Estudiante de <strong class="text-white">7.º año</strong> de una <strong class="text-white">escuela secundaria técnica</strong> con
+                    <strong class="text-white">orientación en informática</strong>, con egreso previsto para <strong class="text-white">2026</strong>.
+                    Gestiono <strong class="text-ice">Cromito</strong>, un emprendimiento de <strong class="text-white">comercio electrónico</strong>
+                    en el que realizo tareas de publicación de productos, creación de contenido, atención al cliente, ventas,
+                    promociones y coordinación de pedidos y envíos.
+                </p>
+                <p class="text-slate-400 leading-relaxed mt-4">
+                    Busco una oportunidad <strong class="text-white">junior</strong> en <strong class="text-white">marketing digital</strong> o
+                    <strong class="text-white">e-commerce</strong> donde aportar mi experiencia práctica y seguir desarrollándome profesionalmente.
+                </p>
+                <div class="gradient-line mt-8 mb-6"></div>
+                <div class="flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs text-slate-400">
+                    <span class="flex items-center gap-2">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Lanús / Valentín Alsina, Buenos Aires
+                    </span>
+                    <a href="tel:+541164900202" class="flex items-center gap-2 hover:text-ice transition-colors">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+                        11 6490-0202
+                    </a>
+                    <a href="mailto:rodriguezagustin3241@gmail.com" class="flex items-center gap-2 hover:text-ice transition-colors">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                        rodriguezagustin3241@gmail.com
+                    </a>
+                </div>
+            </div>
+            <div class="reveal md:col-span-2 flex flex-col gap-6" style="transition-delay:.15s">
+                <div class="glass rounded-3xl p-7 glow-border flex-1">
+                    <span class="font-mono text-xs text-electric tracking-widest uppercase">Formación académica</span>
+                    <h3 class="font-display font-semibold text-white text-lg mt-3">Escuela Secundaria Técnica N.º 2 de Valentín Alsina</h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">Séptimo año en curso — Egreso previsto: 2026. Orientación en informática y tecnología.</p>
+                </div>
+                <div class="glass rounded-3xl p-7 glow-border flex-1">
+                    <span class="font-mono text-xs text-electric tracking-widest uppercase">Idiomas</span>
+                    <div class="mt-4 space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5"><span class="text-white font-medium">Español</span><span class="font-mono text-xs text-slate-400">Nativo</span></div>
+                            <div class="h-1.5 rounded-full bg-slate-700/60 overflow-hidden"><div class="h-full w-full rounded-full bg-gradient-to-r from-electric to-ice"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5"><span class="text-white font-medium">Inglés</span><span class="font-mono text-xs text-slate-400">Básico</span></div>
+                            <div class="h-1.5 rounded-full bg-slate-700/60 overflow-hidden"><div class="h-full w-[35%] rounded-full bg-gradient-to-r from-electric to-ice"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CROMITO / PROYECTO PRINCIPAL -->
+    <section id="cromito" class="relative max-w-6xl mx-auto px-5 sm:px-8 py-24">
+        <div class="reveal flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div>
+                <span class="font-mono text-xs text-electric tracking-[0.25em] uppercase">02 / Caso de estudio</span>
+                <h2 class="font-display font-bold text-white text-3xl sm:text-5xl mt-3 tracking-tight">Cromito — <span class="gradient-text">E-commerce & Social Media</span></h2>
+            </div>
+            <span class="font-mono text-xs text-slate-400 glass rounded-full px-4 py-2 self-start sm:self-auto">Febrero 2026 – Actualidad</span>
+        </div>
+
+        <!-- Logro destacado -->
+        <div class="reveal mt-10 glass-strong corner-dots rounded-3xl p-8 sm:p-10 relative overflow-hidden">
+            <div class="orb w-64 h-64 bg-blue-600/25 -top-20 -right-20"></div>
+            <div class="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
+                <div class="shrink-0">
+                    <div class="font-display font-bold text-5xl sm:text-6xl gradient-text leading-none">78+</div>
+                    <div class="font-mono text-xs text-slate-400 tracking-wider uppercase mt-2">Ventas concretadas</div>
+                </div>
+                <div class="gradient-line hidden md:block w-px h-16 !bg-gradient-to-b" style="background:linear-gradient(180deg,transparent,rgba(147,197,253,0.3),transparent);width:1px;height:64px;"></div>
+                <p class="text-slate-300 leading-relaxed">
+                    Emprendimiento propio de <strong class="text-white">comercio electrónico de accesorios e indumentaria</strong>,
+                    gestionado de punta a punta: desde la publicación del catálogo hasta el despacho de cada pedido.
+                    Más de <strong class="text-ice">78 ventas concretadas</strong> desde el inicio del emprendimiento.
+                </p>
+            </div>
+        </div>
+
+        <!-- Enlace Tiendanube -->
+        <div class="reveal mt-6 rounded-3xl p-[1px] bg-gradient-to-r from-electric/60 via-ice/30 to-electric/60" style="transition-delay:.1s">
+            <div class="rounded-3xl bg-ink/80 backdrop-blur-xl p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div class="flex items-start gap-5">
+                    <div class="shrink-0 w-14 h-14 rounded-2xl glass flex items-center justify-center">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9M3 9v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9M3 9h18M9 21v-7h6v7"/></svg>
+                    </div>
+                    <div>
+                        <span class="font-mono text-[11px] text-electric tracking-[0.2em] uppercase">Tienda oficial · Tiendanube</span>
+                        <h3 class="font-display font-semibold text-white text-xl mt-1.5">cromito.mitiendanube.com</h3>
+                        <p class="text-slate-400 text-sm mt-1.5 leading-relaxed">Catálogo optimizado, secciones de encargo y stock local, pasarelas de pago y diseño personalizado.</p>
+                    </div>
+                </div>
+                <a href="https://cromito.mitiendanube.com" target="_blank" rel="noopener noreferrer" class="cta-primary shrink-0 text-white font-semibold px-7 py-3.5 rounded-2xl inline-flex items-center justify-center gap-2">
+                    Visitar tienda
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Qué hago en Cromito -->
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="reveal glass corner-dots rounded-3xl p-6 glow-border">
+                <div class="w-11 h-11 rounded-xl bg-electric/15 border border-electric/25 flex items-center justify-center mb-4">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                </div>
+                <h4 class="font-display font-semibold text-white">Gestión de Tienda Online</h4>
+                <p class="text-slate-400 text-sm mt-2 leading-relaxed">Administración de tienda en Tiendanube y actualización constante del catálogo.</p>
+            </div>
+            <div class="reveal glass corner-dots rounded-3xl p-6 glow-border" style="transition-delay:.08s">
+                <div class="w-11 h-11 rounded-xl bg-electric/15 border border-electric/25 flex items-center justify-center mb-4">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+                </div>
+                <h4 class="font-display font-semibold text-white">Contenido Audiovisual</h4>
+                <p class="text-slate-400 text-sm mt-2 leading-relaxed">Creación y edición de reels, videos promocionales y posteos para Instagram.</p>
+            </div>
+            <div class="reveal glass corner-dots rounded-3xl p-6 glow-border" style="transition-delay:.16s">
+                <div class="w-11 h-11 rounded-xl bg-electric/15 border border-electric/25 flex items-center justify-center mb-4">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </div>
+                <h4 class="font-display font-semibold text-white">Atención y Conversión</h4>
+                <p class="text-slate-400 text-sm mt-2 leading-relaxed">Atención de consultas, cierre de ventas directas y seguimiento postventa de clientes.</p>
+            </div>
+            <div class="reveal glass corner-dots rounded-3xl p-6 glow-border" style="transition-delay:.24s">
+                <div class="w-11 h-11 rounded-xl bg-electric/15 border border-electric/25 flex items-center justify-center mb-4">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
+                </div>
+                <h4 class="font-display font-semibold text-white">Logística y Envíos</h4>
+                <p class="text-slate-400 text-sm mt-2 leading-relaxed">Organización de promociones, preparación de pedidos y coordinación de despachos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- REELS -->
+    <section id="reels" class="relative max-w-6xl mx-auto px-5 sm:px-8 py-24">
+        <div class="reveal">
+            <span class="font-mono text-xs text-electric tracking-[0.25em] uppercase">03 / Portfolio audiovisual</span>
+            <h2 class="font-display font-bold text-white text-3xl sm:text-5xl mt-3 tracking-tight">Reels de <span class="gradient-text">Instagram</span></h2>
+            <p class="text-slate-400 mt-4 max-w-2xl leading-relaxed">Muestra de edición de video: piezas publicadas en el canal oficial de la marca
+                <a href="https://instagram.com/cromito.ar" target="_blank" rel="noopener noreferrer" class="text-ice hover:text-white font-medium transition-colors">@cromito.ar</a>.
+                Tocá cada video para verlo en Instagram.</p>
+        </div>
+
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Reel 1 -->
+            <a href="https://www.instagram.com/cromito.ar/reel/DdXBT1oJYH1/" target="_blank" rel="noopener noreferrer" class="reel-card group reveal block">
+                <div class="reel-visual relative aspect-[9/16] max-h-[420px] w-full mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/10 transition-shadow duration-500" style="max-width:280px;">
+                    <div class="absolute inset-0 bg-gradient-to-b from-ink2 via-ink to-slate-950"></div>
+                    <div class="absolute inset-0 opacity-40" style="background-image:radial-gradient(circle at 30% 25%, rgba(37,99,235,0.5), transparent 45%),radial-gradient(circle at 75% 70%, rgba(96,165,250,0.35), transparent 45%);"></div>
+                    <div class="scanline"></div>
+                    <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+                        <span class="font-mono text-[10px] tracking-widest text-ice/80 uppercase">@cromito.ar</span>
+                        <span class="glass rounded-full px-2.5 py-1 font-mono text-[9px] tracking-widest text-white/80 uppercase">Reel</span>
+                    </div>
+                    <div class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full glass-strong flex items-center justify-center transition-all duration-500 shadow-[0_0_40px_rgba(37,99,235,0.5)]">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" class="ml-1"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <div class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-slate-950/95 to-transparent">
+                        <h4 class="font-display font-semibold text-white">Reel #1 — Cromito</h4>
+                        <p class="text-slate-400 text-xs mt-1">Edición y optimización de contenido dinámico.</p>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center justify-center gap-2 font-mono text-xs text-slate-400 group-hover:text-ice transition-colors">
+                    Ver en Instagram
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </div>
+            </a>
+
+            <!-- Reel 2 -->
+            <a href="https://www.instagram.com/cromito.ar/reel/DeN7JBYOwAI/" target="_blank" rel="noopener noreferrer" class="reel-card group reveal block" style="transition-delay:.12s">
+                <div class="reel-visual relative aspect-[9/16] max-h-[420px] w-full mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/10 transition-shadow duration-500" style="max-width:280px;">
+                    <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-ink to-ink2"></div>
+                    <div class="absolute inset-0 opacity-40" style="background-image:radial-gradient(circle at 70% 20%, rgba(37,99,235,0.5), transparent 45%),radial-gradient(circle at 25% 75%, rgba(96,165,250,0.35), transparent 45%);"></div>
+                    <div class="scanline" style="animation-delay:1.2s"></div>
+                    <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+                        <span class="font-mono text-[10px] tracking-widest text-ice/80 uppercase">@cromito.ar</span>
+                        <span class="glass rounded-full px-2.5 py-1 font-mono text-[9px] tracking-widest text-white/80 uppercase">Reel</span>
+                    </div>
+                    <div class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full glass-strong flex items-center justify-center transition-all duration-500 shadow-[0_0_40px_rgba(37,99,235,0.5)]">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" class="ml-1"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <div class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-slate-950/95 to-transparent">
+                        <h4 class="font-display font-semibold text-white">Reel #2 — Cromito</h4>
+                        <p class="text-slate-400 text-xs mt-1">Pieza audiovisual enfocada en captar atención.</p>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center justify-center gap-2 font-mono text-xs text-slate-400 group-hover:text-ice transition-colors">
+                    Ver en Instagram
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </div>
+            </a>
+
+            <!-- CTA Instagram -->
+            <div class="reveal flex" style="transition-delay:.24s">
+                <a href="https://instagram.com/cromito.ar" target="_blank" rel="noopener noreferrer" class="glass corner-dots rounded-3xl p-8 flex flex-col justify-between w-full glow-border group">
+                    <div class="w-12 h-12 rounded-2xl bg-electric/15 border border-electric/25 flex items-center justify-center">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-display font-semibold text-white text-xl">¿Querés ver más?</h4>
+                        <p class="text-slate-400 text-sm mt-2 leading-relaxed">Todo el contenido de la marca se publica y difunde en el Instagram oficial.</p>
+                        <span class="mt-5 inline-flex items-center gap-2 text-ice font-medium text-sm group-hover:gap-3.5 transition-all duration-300">
+                            Seguir @cromito.ar
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPETENCIAS -->
+    <section id="competencias" class="relative max-w-6xl mx-auto px-5 sm:px-8 py-24">
+        <div class="reveal">
+            <span class="font-mono text-xs text-electric tracking-[0.25em] uppercase">04 / Habilidades</span>
+            <h2 class="font-display font-bold text-white text-3xl sm:text-5xl mt-3 tracking-tight">Competencias</h2>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+            <!-- Digitales -->
+            <div class="reveal glass corner-dots rounded-3xl p-8 glow-border">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-2xl bg-electric/15 border border-electric/25 flex items-center justify-center">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-white text-lg">Digitales y Contenido</h3>
+                </div>
+                <ul class="space-y-3.5 text-sm">
+                    <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-electric shrink-0"></span><span class="text-slate-300">Tiendanube <span class="text-slate-500">(Catálogo y gestión)</span></span></li>
+                    <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-electric shrink-0"></span><span class="text-slate-300">Instagram <span class="text-slate-500">(Estrategia y publicaciones)</span></span></li>
+                    <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-electric shrink-0"></span><span class="text-slate-300">CapCut & Filmora <span class="text-slate-500">(Edición de video)</span></span></li>
+                    <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-electric shrink-0"></span><span class="text-slate-300">Adobe Premiere <span class="text-slate-500">(Nivel básico)</span></span></li>
+                    <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-electric shrink-0"></span><span class="text-slate-300">Herramientas de Inteligencia Artificial</span></li>
+                </ul>
+            </div>
+
+            <!-- Comerciales -->
+            <div class="reveal glass corner-dots rounded-3xl p-8 glow-border" style="transition-delay:.1s">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-2xl bg-electric/15 border border-electric/25 flex items-center justify-center">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-4 4"/></svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-white text-lg">Comerciales</h3>
+                </div>
+                <ul class="space-y-3.5 text-sm">
+                    <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-electric shrink-0"></span><span class="text-slate-300">Atención al cliente</span></li>
+                    <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-electric shrink-0"></span><span class="text-slate-300">Ventas y seguimiento de consultas</span></li>
+                    <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-electric shrink-0"></span><span class="text-slate-300">Organización de promociones y pedidos</span></li>
+                </ul>
+            </div>
+
+            <!-- Técnicas -->
+            <div class="reveal glass corner-dots rounded-3xl p-8 glow-border" style="transition-delay:.2s">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-2xl bg-electric/15 border border-electric/25 flex items-center justify-center">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-white text-lg">Técnicas e Informática</h3>
+                </div>
+                <ul class="space-y-3.5 text-sm">
+                    <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-electric shrink-0"></span><span class="text-slate-300">Armado y mantenimiento básico de PC</span></li>
+                    <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-electric shrink-0"></span><span class="text-slate-300">C++, C# y HTML <span class="text-slate-500">(En formación)</span></span></li>
+                    <li class="flex items-start gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-electric shrink-0"></span><span class="text-slate-300">Cortadora láser e impresoras 3D</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICACIONES -->
+    <section id="certificaciones" class="relative max-w-6xl mx-auto px-5 sm:px-8 py-24">
+        <div class="reveal">
+            <span class="font-mono text-xs text-electric tracking-[0.25em] uppercase">05 / Formación continua</span>
+            <h2 class="font-display font-bold text-white text-3xl sm:text-5xl mt-3 tracking-tight">Cursos y <span class="gradient-text">Certificaciones</span></h2>
+        </div>
+
+        <div class="mt-10 space-y-4">
+            <!-- Google Skillshop -->
+            <div class="reveal glass corner-dots rounded-3xl p-6 sm:p-7 glow-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-start gap-5">
+                    <div class="shrink-0 w-12 h-12 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center font-display font-bold text-white text-lg">G</div>
+                    <div>
+                        <h4 class="font-display font-semibold text-white text-lg">Domina la IA con Gemini</h4>
+                        <p class="text-slate-400 text-sm mt-1">Google Skillshop · Certificado de formación en inteligencia artificial con Gemini.</p>
+                    </div>
+                </div>
+                <a href="https://skillshop.exceedlms.com/student/award/phesB7casMt3ZNWrkDXeCSxz" target="_blank" rel="noopener noreferrer" class="shrink-0 self-start sm:self-center inline-flex items-center gap-2 cta-primary text-white font-semibold text-sm px-5 py-2.5 rounded-xl">
+                    Ver certificado
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+            </div>
+
+            <!-- Accenture -->
+            <div class="reveal glass corner-dots rounded-3xl p-6 sm:p-7 glow-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-start gap-5">
+                    <div class="shrink-0 w-12 h-12 rounded-2xl bg-electric/15 border border-electric/25 flex items-center justify-center font-display font-bold text-ice text-lg">A</div>
+                    <div>
+                        <h4 class="font-display font-semibold text-white text-lg">Posproducción de Vídeos <span class="text-slate-400 font-normal text-sm">(17.8h)</span></h4>
+                        <p class="text-slate-400 text-sm mt-1">Accenture / Fundación Accenture · Finalizado el 17/10/2026</p>
+                    </div>
+                </div>
+                <span class="shrink-0 self-start sm:self-center inline-flex items-center gap-2 glass rounded-full px-4 py-2 font-mono text-xs text-emerald-300 border-emerald-400/20">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    Completado
+                </span>
+            </div>
+
+            <!-- HubSpot Marketing Digital -->
+            <div class="reveal glass corner-dots rounded-3xl p-6 sm:p-7 glow-border flex flex-col sm:flex-row sm:items-center justify-between gap-4" style="transition-delay:.08s">
+                <div class="flex items-start gap-5">
+                    <div class="shrink-0 w-12 h-12 rounded-2xl bg-electric/15 border border-electric/25 flex items-center justify-center font-display font-bold text-ice text-lg">H</div>
+                    <div>
+                        <h4 class="font-display font-semibold text-white text-lg">Certificado en Marketing Digital</h4>
+                        <p class="text-slate-400 text-sm mt-1">HubSpot Academy · Vigente del 17/10/2026 al 15/11/2028</p>
+                    </div>
+                </div>
+                <a href="https://app.hubspot.com/academy/achievements/0bdbylch/es/1/agustin-nahuel-rodriguez/certificado-en-marketing-digital" target="_blank" rel="noopener noreferrer" class="shrink-0 self-start sm:self-center inline-flex items-center gap-2 cta-primary text-white font-semibold text-sm px-5 py-2.5 rounded-xl">
+                    Ver certificado
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+            </div>
+
+            <!-- HubSpot Redes Sociales -->
+            <div class="reveal glass corner-dots rounded-3xl p-6 sm:p-7 glow-border flex flex-col sm:flex-row sm:items-center justify-between gap-4" style="transition-delay:.16s">
+                <div class="flex items-start gap-5">
+                    <div class="shrink-0 w-12 h-12 rounded-2xl bg-electric/15 border border-electric/25 flex items-center justify-center font-display font-bold text-ice text-lg">H</div>
+                    <div>
+                        <h4 class="font-display font-semibold text-white text-lg">Certificado en Marketing en Redes Sociales</h4>
+                        <p class="text-slate-400 text-sm mt-1">HubSpot Academy · Vigente del 24/09/2026 al 23/10/2028</p>
+                    </div>
+                </div>
+                <a href="https://app.hubspot.com/academy/achievements/kggs51qf/es/1/agustin-nahuel-rodriguez/certificado-en-marketing-en-redes-sociales" target="_blank" rel="noopener noreferrer" class="shrink-0 self-start sm:self-center inline-flex items-center gap-2 cta-primary text-white font-semibold text-sm px-5 py-2.5 rounded-xl">
+                    Ver certificado
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+            </div>
+
+            <!-- Santander Ecommerce -->
+            <div class="reveal glass corner-dots rounded-3xl p-6 sm:p-7 glow-border flex flex-col sm:flex-row sm:items-center justify-between gap-4" style="transition-delay:.24s">
+                <div class="flex items-start gap-5">
+                    <div class="shrink-0 w-12 h-12 rounded-2xl bg-electric/15 border border-electric/25 flex items-center justify-center font-display font-bold text-ice text-lg">S</div>
+                    <div>
+                        <h4 class="font-display font-semibold text-white text-lg">Ecommerce para pymes: vende más online <span class="text-slate-400 font-normal text-sm">(6h)</span></h4>
+                        <p class="text-slate-400 text-sm mt-1">Santander Open Academy / IE University · Finalizado el 19/09/2026</p>
+                    </div>
+                </div>
+                <span class="shrink-0 self-start sm:self-center inline-flex items-center gap-2 glass rounded-full px-4 py-2 font-mono text-xs text-emerald-300 border-emerald-400/20">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    Completado
+                </span>
+            </div>
+
+            <!-- Santander Storytelling -->
+            <div class="reveal glass corner-dots rounded-3xl p-6 sm:p-7 glow-border flex flex-col sm:flex-row sm:items-center justify-between gap-4" style="transition-delay:.32s">
+                <div class="flex items-start gap-5">
+                    <div class="shrink-0 w-12 h-12 rounded-2xl bg-electric/15 border border-electric/25 flex items-center justify-center font-display font-bold text-ice text-lg">S</div>
+                    <div>
+                        <h4 class="font-display font-semibold text-white text-lg">Storytelling en el Marketing Digital <span class="text-slate-400 font-normal text-sm">(8h)</span></h4>
+                        <p class="text-slate-400 text-sm mt-1">Santander Open Academy / Univ. of Chicago · Finalizado el 10/09/2026</p>
+                    </div>
+                </div>
+                <span class="shrink-0 self-start sm:self-center inline-flex items-center gap-2 glass rounded-full px-4 py-2 font-mono text-xs text-emerald-300 border-emerald-400/20">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    Completado
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="relative max-w-6xl mx-auto px-5 sm:px-8 py-24">
+        <div class="reveal glass-strong corner-dots rounded-[2rem] p-10 sm:p-16 text-center relative overflow-hidden">
+            <div class="spotlight top-[-60%] left-1/2 -translate-x-1/2 !w-[80vmax] !h-[80vmax]"></div>
+            <div class="relative">
+                <h2 class="font-display font-bold text-white text-3xl sm:text-5xl tracking-tight">¿Buscás talento <span class="gradient-text">junior</span>?</h2>
+                <p class="text-slate-400 mt-5 max-w-xl mx-auto leading-relaxed">Estoy disponible para posiciones junior en marketing digital o e-commerce. Escribime y conversemos sobre cómo puedo aportar a tu proyecto.</p>
+                <div class="mt-9 flex flex-wrap justify-center gap-4">
+                    <a href="mailto:rodriguezagustin3241@gmail.com" class="cta-primary text-white font-semibold px-8 py-4 rounded-2xl inline-flex items-center gap-2.5">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                        Enviar Email
+                    </a>
+                    <a href="tel:+541164900202" class="glass text-white font-semibold px-8 py-4 rounded-2xl inline-flex items-center gap-2.5 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+                        11 6490-0202
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 mt-8">
+        <div class="gradient-line"></div>
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-center md:text-left">
+                    <div class="font-display font-bold text-white text-lg flex items-center justify-center md:justify-start gap-2.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-electric shadow-[0_0_12px_rgba(37,99,235,0.9)]"></span>
+                        Agustín Nahuel Rodríguez
+                    </div>
+                    <p class="font-mono text-xs text-slate-500 mt-2">Lanús / Valentín Alsina, Buenos Aires · 11 6490-0202</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="mailto:rodriguezagustin3241@gmail.com" class="glass rounded-full px-5 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                        Email
+                    </a>
+                    <a href="https://cromito.mitiendanube.com" target="_blank" rel="noopener noreferrer" class="glass rounded-full px-5 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        Tiendanube
+                    </a>
+                    <a href="https://instagram.com/cromito.ar" target="_blank" rel="noopener noreferrer" class="glass rounded-full px-5 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        @cromito.ar
+                    </a>
+                </div>
+            </div>
+            <div class="gradient-line mt-10 mb-6"></div>
+            <p class="text-center font-mono text-xs text-slate-600">© 2026 Agustín Nahuel Rodríguez · Marketing Digital · E-commerce · Contenido para Redes Sociales</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal (fallback para navegadores sin IntersectionObserver)
+        if (!('IntersectionObserver' in window)) {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        }
+        const observer = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }) : null;
+        if (observer) document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let menuOpen = false;
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('hidden', !menuOpen);
+            menuIcon.setAttribute('d', menuOpen ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16');
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            menuOpen = false;
+            mobileMenu.classList.add('hidden');
+            menuIcon.setAttribute('d', 'M4 7h16M4 12h16M4 17h16');
+        }));
+
+        // Navbar subtle shadow on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.style.transform = 'translateZ(0)';
+        }, { passive: true });
+    </script>
+</body>
+</html>
